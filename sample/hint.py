@@ -1,4 +1,4 @@
-from typing import List, Dict
+from typing import List, Dict, Optional
 
 def get_full_name(first_name: str, last_name: str):
     full_name = first_name.title() + " " + last_name.title()
@@ -20,4 +20,12 @@ def process_items2(prices: Dict[str, float]):
         print(item_name)
         print(item_price)
 
-process_items2({"apple": 1.0, "banana": 2.0})
+
+def say_hi(name: Optional[str] = None): # デフォルトはNone
+    if name is not None:
+        print(f"Hey {name}!")
+    else:
+        print("Hello World")
+
+say_hi()
+say_hi("John")
