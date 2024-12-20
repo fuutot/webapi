@@ -17,22 +17,13 @@ I am a bullshit function which needs decoration
 Do some bullshit AFTER executing a_function_requiring_decoration
 """
 
-# Pythonにおいてすべてがオブジェクトである
+def hello(name: str = 'sei'):
+    return 'hello, ' + name
 
-# int型のオブジェクトである
-x = 10
-print(type(x))
-print(x.bit_length())
+greet = hello
 
-# str型のオブジェクトである
-s = "hoge"
-print(type(s))
-print(s.capitalize())
+print('print hello:', hello)
+print('print hello():', hello())
 
-# function型のオブジェクトである
-
-def hoge():
-    """hoge関数"""
-    return "hoge"
-print(type(hoge))
-print(hoge.__doc__)
+print('print greet', greet)
+print('print greet()', greet())
