@@ -18,12 +18,22 @@ Do some bullshit AFTER executing a_function_requiring_decoration
 """
 
 def hello(name: str = 'sei'):
-    return 'hello, ' + name
+    def greet():
+        return 'now you are in the greet() function'
 
-greet = hello
+    def welcome():
+        return 'now you are in the welcome() function'
 
-print('print hello:', hello)
-print('print hello():', hello())
+    if name == 'sei':
+        return greet
+    else:
+        return welcome
 
-print('print greet', greet)
-print('print greet()', greet())
+hello_returned = hello()
+hello_deep_returned = hello()()
+
+print('print hello_returned:', hello_returned)
+print('print hello_returned():', hello_returned())
+
+print('print hello_deep_returned:', hello_deep_returned)
+print('print hello_deep_returned():', hello_deep_returned()) # TypeError: 'str' object is not callable
