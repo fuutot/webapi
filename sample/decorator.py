@@ -36,4 +36,6 @@ print('print hello_returned:', hello_returned)
 print('print hello_returned():', hello_returned())
 
 print('print hello_deep_returned:', hello_deep_returned)
-print('print hello_deep_returned():', hello_deep_returned()) # TypeError: 'str' object is not callable
+#print('print hello_deep_returned():', hello_deep_returned()) # TypeError: 'str' object is not callable
+
+print(greet()) #NameError: name 'greet' is not defined
