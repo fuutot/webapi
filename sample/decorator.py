@@ -17,25 +17,16 @@ I am a bullshit function which needs decoration
 Do some bullshit AFTER executing a_function_requiring_decoration
 """
 
-def hello(name: str = 'sei'):
-    def greet():
-        return 'now you are in the greet() function'
-
-    def welcome():
-        return 'now you are in the welcome() function'
-
-    if name == 'sei':
-        return greet
-    else:
-        return welcome
-
-hello_returned = hello()
-hello_deep_returned = hello()()
-
-print('print hello_returned:', hello_returned)
-print('print hello_returned():', hello_returned())
-
-print('print hello_deep_returned:', hello_deep_returned)
-#print('print hello_deep_returned():', hello_deep_returned()) # TypeError: 'str' object is not callable
-
-print(greet()) #NameError: name 'greet' is not defined
+def hi():
+    return "hi sei!"
+ 
+def do_something_before_hi(func):
+    print("I am doing some bullshit before executing %s()" % func.__name__)
+    print(func())
+    
+ 
+do_something_before_hi(hi)
+"""
+I am doing some bullshit before executing hi()
+hi sei!
+"""
